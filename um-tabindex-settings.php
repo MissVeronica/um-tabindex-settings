@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Tabindex Settings
  * Description:     Extension to Ultimate Member for setting Tabindex in the Registration form's text and textarea input fields.
- * Version:         1.0.0 
+ * Version:         1.1.0 
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -19,7 +19,7 @@ if ( ! class_exists( 'UM' ) ) return;
 class UM_Tabindex_Settings {
 
     public $tabindex_meta_keys= array();
-    public $needles = array( '<input ', '<textarea ' );
+    public $needles = array( '<input ', '<textarea ', '<select ' );
 
 	public function __construct() {
 
