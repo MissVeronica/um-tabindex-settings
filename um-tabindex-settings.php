@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Tabindex Settings
  * Description:     Extension to Ultimate Member for setting Tabindex in the Registration form's text and textarea input fields.
- * Version:         1.1.0 
+ * Version:         1.2.0 
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -10,7 +10,7 @@
  * Author URI:      https://github.com/MissVeronica?tab=repositories
  * Text Domain:     ultimate-member
  * Domain Path:     /languages
- * UM version:      2.6.11
+ * UM version:      2.8.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -60,14 +60,17 @@ class UM_Tabindex_Settings {
 
     public function um_settings_structure_tabindex( $settings_structure ) {
 
-        $settings_structure['appearance']['sections']['registration_form']['fields'][] =
+        $settings_structure['appearance']['sections']['registration_form']['form_sections']['tabindex']['title']       = __( 'Tabindex Settings', 'ultimate-member' );
+        $settings_structure['appearance']['sections']['registration_form']['form_sections']['tabindex']['description'] = __( 'Plugin version 1.1.0 - tested with UM 2.8.3', 'ultimate-member' );
+
+        $settings_structure['appearance']['sections']['registration_form']['form_sections']['tabindex']['fields'][] =
 
             array(
-                    'id'        => 'tabindex_meta_keys',
-                    'type'      => 'textarea',
-                    'label'     => __( 'Tabindex Settings - Enter meta_keys in tabindex order', 'ultimate-member' ),
-                    'tooltip'   => __( 'One meta_key per line. Tabindex used for text and textarea input fields in Registration Forms.', 'ultimate-member' ),
-                    'size'      => 'small',
+                    'id'          => 'tabindex_meta_keys',
+                    'type'        => 'textarea',
+                    'label'       => __( 'Enter meta_keys in tabindex order', 'ultimate-member' ),
+                    'description' => __( 'One meta_key per line. Tabindex used for text and textarea input fields in Registration Forms.', 'ultimate-member' ),
+                    'size'        => 'small',
                 );
 
         return $settings_structure;
